@@ -1,1 +1,918 @@
 
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เที่ยวประจวบคีรีขันธ์</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    background-color: #EAF7FF;
+    color: #333;
+}
+
+
+/* ส่วนหัว */
+
+header {
+    background: linear-gradient(135deg, #0077B6, #00B4D8);
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+
+/* เมนู */
+
+nav {
+    background-color: #023E8A;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 8px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    color: #FFD166;
+}
+
+
+/* หน้า */
+
+.page {
+    display: none;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* กล่อง */
+
+.box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px #bbb;
+    margin-bottom: 25px;
+}
+
+.box h2 {
+    color: #0077B6;
+    text-align: center;
+}
+
+.box p {
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+
+/* รูป */
+
+.main-image {
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: 350px;
+    object-fit: cover;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+
+/* หน้าปก */
+
+.cover {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.cover h1 {
+    font-size: 45px;
+    color: #0077B6;
+}
+
+.cover p {
+    font-size: 20px;
+}
+
+.start-button {
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #023E8A;
+}
+
+
+/* การ์ด */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px #bbb;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: #0077B6;
+}
+
+
+/* ผู้จัดทำ */
+
+.creator {
+    background-color: #CAF0F8;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #023E8A;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     ส่วนหัว
+============================== -->
+
+<header>
+
+<h1>
+🌴 เที่ยวประจวบคีรีขันธ์ 🌊
+</h1>
+
+<p>
+เว็บไซต์แนะนำสถานที่ท่องเที่ยว
+จังหวัดประจวบคีรีขันธ์
+</p>
+
+</header>
+
+
+<!-- ==============================
+     เมนู
+============================== -->
+
+<nav>
+
+<button onclick="showPage('cover')">
+หน้าปก
+</button>
+
+<button onclick="showPage('home')">
+หน้าหลัก
+</button>
+
+<button onclick="showPage('talu')">
+เกาะทะลุ
+</button>
+
+<button onclick="showPage('rajabhakti')">
+อุทยานราชภักดิ์
+</button>
+
+<button onclick="showPage('phrayanakhon')">
+ถ้ำพระยานคร
+</button>
+
+<button onclick="showPage('khaokoalok')">
+หาดเขากะโหลก
+</button>
+
+<button onclick="showPage('aoprachuap')">
+อ่าวประจวบ
+</button>
+
+<button onclick="showPage('palu')">
+น้ำตกป่าละอู
+</button>
+
+<button onclick="showPage('sirinath')">
+ป่าชายเลนสิรินาถราชินี
+</button>
+
+<button onclick="showPage('creator')">
+ผู้จัดทำ
+</button>
+
+</nav>
+
+
+<!-- ==============================
+     หน้า 1 หน้าปก
+============================== -->
+
+<section id="cover" class="page active">
+
+<div class="box cover">
+
+
+<!-- 📸 ใช้รูปเกาะทะลุเป็นรูปปกชั่วคราว -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/ปก.png"
+alt="เกาะทะลุ"
+class="main-image">
+
+
+<h1>
+🌴 เที่ยวประจวบคีรีขันธ์ 🌊
+</h1>
+
+<p>
+เว็บไซต์แนะนำสถานที่ท่องเที่ยว
+จังหวัดประจวบคีรีขันธ์
+</p>
+
+<p>
+พบกับทะเล ภูเขา น้ำตก
+และสถานที่ท่องเที่ยวที่น่าสนใจ
+</p>
+
+<br>
+
+<button
+class="start-button"
+onclick="showPage('home')">
+
+เข้าสู่เว็บไซต์ →
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 2 หน้าหลัก
+============================== -->
+
+<section id="home" class="page">
+
+<div class="box">
+
+<h2>
+🏝️ ยินดีต้อนรับสู่จังหวัดประจวบคีรีขันธ์
+</h2>
+
+
+<p>
+จังหวัดประจวบคีรีขันธ์เป็นจังหวัดที่มี
+สถานที่ท่องเที่ยวที่หลากหลาย
+ทั้งทะเล ภูเขา น้ำตก
+และสถานที่สำคัญทางประวัติศาสตร์
+</p>
+
+<p>
+เว็บไซต์นี้จัดทำขึ้นเพื่อแนะนำสถานที่
+ท่องเที่ยวที่น่าสนใจของจังหวัด
+ประจวบคีรีขันธ์
+</p>
+
+
+<h2>
+📍 สถานที่ท่องเที่ยวแนะนำ
+</h2>
+
+
+<div class="cards">
+
+
+<!-- 1 เกาะทะลุ -->
+
+<div class="card">
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/ko-talu.jpg"
+alt="เกาะทะลุ">
+
+<h3>
+🏝️ เกาะทะลุ
+</h3>
+
+<p>
+เกาะที่มีธรรมชาติสวยงาม
+น้ำทะเลใส และเหมาะสำหรับ
+การพักผ่อน
+</p>
+
+</div>
+
+
+<!-- 2 อุทยานราชภักดิ์ -->
+
+<div class="card">
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/rajabhakti.png"
+alt="อุทยานราชภักดิ์">
+
+<h3>
+👑 อุทยานราชภักดิ์
+</h3>
+
+<p>
+สถานที่สำคัญที่มี
+พระบรมราชานุสาวรีย์
+ของพระมหากษัตริย์ไทย
+</p>
+
+</div>
+
+
+<!-- 3 ถ้ำพระยานคร -->
+
+<div class="card">
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/phrayanakhon.jpg"
+alt="ถ้ำพระยานคร">
+
+<h3>
+🏞️ ถ้ำพระยานคร
+</h3>
+
+<p>
+ถ้ำธรรมชาติที่มี
+พระที่นั่งคูหาคฤหาสน์
+เป็นจุดเด่น
+</p>
+
+</div>
+
+
+<!-- 4 หาดเขากะโหลก -->
+
+<div class="card">
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/khaokoalok.jpg"
+alt="หาดเขากะโหลก">
+
+<h3>
+🏖️ หาดเขากะโหลก
+</h3>
+
+<p>
+ชายหาดสวยและมีภูเขา
+ตั้งอยู่ริมทะเล
+เหมาะสำหรับพักผ่อน
+</p>
+
+</div>
+
+
+<!-- 5 อ่าวประจวบ -->
+
+<div class="card">
+
+<!-- ใช้รูปเกาะทะลุชั่วคราว -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/อ่าวประจวบ.jpg"
+alt="อ่าวประจวบคีรีขันธ์">
+
+<h3>
+🌊 อ่าวประจวบคีรีขันธ์
+</h3>
+
+<p>
+วิวทะเลที่สวยงาม
+และเป็นส่วนหนึ่งของ
+เมืองสามอ่าว
+</p>
+
+</div>
+
+
+<!-- 6 น้ำตกป่าละอู -->
+
+<div class="card">
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/pala-u.jpg"
+alt="น้ำตกป่าละอู">
+
+<h3>
+💦 น้ำตกป่าละอู
+</h3>
+
+<p>
+น้ำตกท่ามกลางธรรมชาติ
+และผืนป่าที่อุดมสมบูรณ์
+</p>
+
+</div>
+
+
+<!-- 7 ป่าชายเลน -->
+
+<div class="card">
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/sirinath.png"
+alt="ศูนย์ศึกษาเรียนรู้ระบบนิเวศป่าชายเลนสิรินาถราชินี">
+
+<h3>
+🌱 ป่าชายเลนสิรินาถราชินี
+</h3>
+
+<p>
+แหล่งเรียนรู้ระบบนิเวศ
+ป่าชายเลนและธรรมชาติ
+ที่น่าสนใจ
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 3 เกาะทะลุ
+============================== -->
+
+<section id="talu" class="page">
+
+<div class="box">
+
+<h2>
+🏝️ เกาะทะลุ
+</h2>
+
+
+<!-- 📸 รูปเกาะทะลุ -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/ko-talu.jpg"
+alt="เกาะทะลุ"
+class="main-image">
+
+
+<p>
+เกาะทะลุเป็นสถานที่ท่องเที่ยว
+ทางทะเลที่มีธรรมชาติสวยงาม
+และมีน้ำทะเลใส
+</p>
+
+<p>
+นักท่องเที่ยวสามารถพักผ่อน
+ชมวิวทะเล และสัมผัสธรรมชาติ
+ของเกาะได้
+</p>
+
+<p>
+เป็นอีกหนึ่งสถานที่ท่องเที่ยว
+ที่น่าสนใจของจังหวัด
+ประจวบคีรีขันธ์
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 4 อุทยานราชภักดิ์
+============================== -->
+
+<section id="rajabhakti" class="page">
+
+<div class="box">
+
+<h2>
+👑 อุทยานราชภักดิ์
+</h2>
+
+
+<!-- 📸 รูปอุทยานราชภักดิ์ -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/rajabhakti.png"
+alt="อุทยานราชภักดิ์"
+class="main-image">
+
+
+<p>
+อุทยานราชภักดิ์เป็นสถานที่สำคัญ
+ของจังหวัดประจวบคีรีขันธ์
+</p>
+
+<p>
+ภายในมีพระบรมราชานุสาวรีย์
+ของพระมหากษัตริย์ไทย
+ที่มีความสำคัญในประวัติศาสตร์
+</p>
+
+<p>
+เป็นสถานที่ที่เหมาะสำหรับ
+การเรียนรู้ประวัติศาสตร์
+และความเป็นมาของประเทศไทย
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 5 ถ้ำพระยานคร
+============================== -->
+
+<section id="phrayanakhon" class="page">
+
+<div class="box">
+
+<h2>
+🏞️ ถ้ำพระยานคร
+</h2>
+
+
+<!-- 📸 รูปถ้ำพระยานคร -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/phrayanakhon.jpg"
+alt="ถ้ำพระยานคร"
+class="main-image">
+
+
+<p>
+ถ้ำพระยานครเป็นสถานที่ท่องเที่ยว
+ทางธรรมชาติที่มีชื่อเสียง
+ของจังหวัดประจวบคีรีขันธ์
+</p>
+
+<p>
+ภายในถ้ำมีพระที่นั่งคูหาคฤหาสน์
+ซึ่งเป็นจุดเด่นที่สวยงาม
+และมีความสำคัญทางประวัติศาสตร์
+</p>
+
+<p>
+นักท่องเที่ยวสามารถเดินทาง
+เข้าไปชมความงดงามของถ้ำ
+และธรรมชาติโดยรอบ
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 6 หาดเขากะโหลก
+============================== -->
+
+<section id="khaokoalok" class="page">
+
+<div class="box">
+
+<h2>
+🏖️ หาดเขากะโหลก
+</h2>
+
+
+<!-- 📸 รูปหาดเขากะโหลก -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/khaokoalok.jpg"
+alt="หาดเขากะโหลก"
+class="main-image">
+
+
+<p>
+หาดเขากะโหลกเป็นชายหาด
+ที่มีบรรยากาศสวยงาม
+และมีภูเขาอยู่ใกล้ชายทะเล
+</p>
+
+<p>
+เหมาะสำหรับการพักผ่อน
+เดินเล่น และชมวิวทะเล
+</p>
+
+<p>
+เป็นอีกหนึ่งสถานที่ท่องเที่ยว
+ที่น่าสนใจในจังหวัด
+ประจวบคีรีขันธ์
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 7 อ่าวประจวบ
+============================== -->
+
+<section id="aoprachuap" class="page">
+
+<div class="box">
+
+<h2>
+🌊 อ่าวประจวบคีรีขันธ์
+</h2>
+
+
+<!-- 📸 ตอนนี้ยังไม่มีรูปอ่าวประจวบ
+     จึงใช้รูปเกาะทะลุชั่วคราว -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/อ่าวประจวบ.jpg"
+alt="อ่าวประจวบคีรีขันธ์"
+class="main-image">
+
+
+<p>
+อ่าวประจวบคีรีขันธ์เป็นสถานที่
+ที่มีทัศนียภาพสวยงาม
+และเป็นส่วนหนึ่งของเมืองสามอ่าว
+</p>
+
+<p>
+สามารถชมวิวทะเล
+และบรรยากาศของเมือง
+ประจวบคีรีขันธ์ได้
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 8 น้ำตกป่าละอู
+============================== -->
+
+<section id="palu" class="page">
+
+<div class="box">
+
+<h2>
+💦 น้ำตกป่าละอู
+</h2>
+
+
+<!-- 📸 รูปน้ำตกป่าละอู -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/pala-u.jpg"
+alt="น้ำตกป่าละอู"
+class="main-image">
+
+
+<p>
+น้ำตกป่าละอูเป็นแหล่งท่องเที่ยว
+ทางธรรมชาติที่อยู่ท่ามกลาง
+ผืนป่าที่อุดมสมบูรณ์
+</p>
+
+<p>
+มีน้ำตกหลายชั้น
+และมีบรรยากาศร่มรื่น
+เหมาะสำหรับผู้ที่ชื่นชอบธรรมชาติ
+</p>
+
+<p>
+เป็นสถานที่ที่เหมาะสำหรับ
+การพักผ่อนและศึกษาธรรมชาติ
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     หน้า 9 ป่าชายเลน
+============================== -->
+
+<section id="sirinath" class="page">
+
+<div class="box">
+
+<h2>
+🌱 ศูนย์ศึกษาเรียนรู้ระบบนิเวศ
+<br>
+ป่าชายเลนสิรินาถราชินี
+</h2>
+
+
+<!-- 📸 รูปป่าชายเลน -->
+
+<img
+src="file:///D:/21ชาลิสา%20มุมแดง/sirinath.png"
+alt="ศูนย์ศึกษาเรียนรู้ระบบนิเวศป่าชายเลนสิรินาถราชินี"
+class="main-image">
+
+
+<p>
+ศูนย์ศึกษาเรียนรู้ระบบนิเวศ
+ป่าชายเลนสิรินาถราชินี
+เป็นแหล่งเรียนรู้เกี่ยวกับ
+ระบบนิเวศป่าชายเลน
+</p>
+
+<p>
+นักท่องเที่ยวสามารถเรียนรู้
+เกี่ยวกับธรรมชาติ ป่าชายเลน
+และสิ่งมีชีวิตต่าง ๆ
+ที่อาศัยอยู่ในระบบนิเวศ
+</p>
+
+<p>
+เป็นสถานที่ที่เหมาะสำหรับ
+การท่องเที่ยวเชิงธรรมชาติ
+และการเรียนรู้เกี่ยวกับสิ่งแวดล้อม
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     ผู้จัดทำ
+============================== -->
+
+<section id="creator" class="page">
+
+<div class="box">
+
+<h2>
+👨‍💻 ผู้จัดทำ
+</h2>
+
+
+<div class="creator">
+
+<b>
+นายอิทธิกร อู่ตะเภา
+</b>
+
+</div>
+
+
+<div class="creator">
+
+<b>
+น.ส.ชาลิสา มุมแดง
+</b>
+
+</div>
+
+<div class="creator">
+
+<b>
+น.ส.ศิวพร คงศรีวรกุลชัย
+</b>
+
+</div>
+
+<div class="creator">
+
+
+
+<p style="text-align:center;">
+
+เว็บไซต์นี้จัดทำขึ้นเพื่อการศึกษา
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     Footer
+============================== -->
+
+<footer>
+
+<p>
+© 2026 เว็บไซต์แนะนำสถานที่ท่องเที่ยว
+จังหวัดประจวบคีรีขันธ์
+</p>
+
+<p>
+จัดทำเพื่อการศึกษา
+</p>
+
+</footer>
+
+
+<!-- ==============================
+     JavaScript
+============================== -->
+
+<script>
+
+function showPage(pageName) {
+
+    var pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+    });
+
+    document.getElementById(pageName)
+    .classList.add("active");
+
+    window.scrollTo(0, 0);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
