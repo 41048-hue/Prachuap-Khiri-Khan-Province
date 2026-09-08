@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เที่ยวประจวบคีรีขันธ์</title>
+
+<style>
+
+/* =========================
+   ตั้งค่าพื้นฐาน
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    background-color: #EAF7FF;
+    color: #333;
+}
+
+
+/* =========================
+   ส่วนหัว
+========================= */
+
+header {
+    background: linear-gradient(135deg, #0077B6, #00B4D8);
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+
+/* =========================
+   เมนู
+========================= */
+
+nav {
+    background-color: #023E8A;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 8px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    color: #FFD166;
+}
+
+
+/* =========================
+   ระบบหน้า
+========================= */
+
+.page {
+    display: none;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* =========================
+   กล่องเนื้อหา
+========================= */
+
+.box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px #bbb;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   หน้าปก
+========================= */
+
+.cover {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.cover h1 {
+    font-size: 45px;
+    color: #0077B6;
+    margin: 20px 0 10px;
+}
+
+.cover p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   รูปภาพหน้าปก
+========================= */
+
+.main-image {
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: 350px;
+    object-fit: cover;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+
+/* =========================
+   ปุ่มเข้าสู่เว็บไซต์
+========================= */
+
+.start-button {
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #023E8A;
+}
+
+
+/* =========================
+   ปุ่มไปหน้าต่าง ๆ
+========================= */
+
+.next-button {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #00B4D8;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #0077B6;
+}
+
+
+/* =========================
+   หัวข้อ
+========================= */
+
+.box h2 {
+    color: #0077B6;
+    text-align: center;
+}
+
+.box p {
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    background-color: #023E8A;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     ส่วนหัวเว็บไซต์
+================================================== -->
+
+<header>
+
+    <h1>
+        🌴 เที่ยวประจวบคีรีขันธ์ 🌊
+    </h1>
+
+    <p>
+        เว็บไซต์แนะนำสถานที่ท่องเที่ยว
+        จังหวัดประจวบคีรีขันธ์
+    </p>
+
+</header>
+
+
+<!-- ==================================================
+     เมนูเว็บไซต์
+================================================== -->
+
+<nav>
+
+    <!-- หน้า 1 -->
+    <button onclick="showPage('page1')">
+        หน้าปก
+    </button>
+
+    <!-- หน้า 2 -->
+    <button onclick="showPage('page2')">
+        จังหวัดประจวบ
+    </button>
+
+    <!-- หน้า 3 -->
+    <button onclick="showPage('page3')">
+        อ่าวประจวบ
+    </button>
+
+    <!-- หน้า 4 -->
+    <button onclick="showPage('page4')">
+        เกาะทะลุ
+    </button>
+
+    <!-- หน้า 5 -->
+    <button onclick="showPage('page5')">
+        อุทยานราชภักดิ์
+    </button>
+
+    <!-- หน้า 6 -->
+    <button onclick="showPage('page6')">
+        ถ้ำพระยานคร
+    </button>
+
+    <!-- หน้า 7 -->
+    <button onclick="showPage('page7')">
+        หาดเขากะโหลก
+    </button>
+
+    <!-- หน้า 8 -->
+    <button onclick="showPage('page8')">
+        น้ำตกป่าละอู
+    </button>
+
+</nav>
+
+
+<!-- ==================================================
+     หน้า 1 : หน้าปก
+================================================== -->
+
+<section id="page1" class="page active">
+
+    <div class="box cover">
+
+        <!-- รูปหน้าปก -->
+        <img
+            src="ปก.png"
+            alt="เที่ยวประจวบคีรีขันธ์"
+            class="main-image"
+        >
+
+        <h1>
+            🌴 เที่ยวประจวบคีรีขันธ์ 🌊
+        </h1>
+
+        <p>
+            เว็บไซต์แนะนำสถานที่ท่องเที่ยว
+            จังหวัดประจวบคีรีขันธ์
+        </p>
+
+        <p>
+            🏝️ ทะเล &nbsp; | &nbsp;
+            ⛰️ ภูเขา &nbsp; | &nbsp;
+            💦 น้ำตก &nbsp; | &nbsp;
+            🌿 ธรรมชาติ
+        </p>
+
+        <br>
+
+        <!-- ปุ่มไปหน้า 2 -->
+        <button
+            class="start-button"
+            onclick="showPage('page2')"
+        >
+            เข้าสู่เว็บไซต์ →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 2 : จังหวัดประจวบคีรีขันธ์
+================================================== -->
+
+<section id="page2" class="page">
+
+    <div class="box">
+
+        <h2>
+            🏝️ จังหวัดประจวบคีรีขันธ์
+        </h2>
+
+        <img
+            src="จังหวัดประจวบ.jpg"
+            alt="จังหวัดประจวบคีรีขันธ์"
+            class="main-image"
+        >
+
+        <p>
+            จังหวัดประจวบคีรีขันธ์เป็นจังหวัดที่มี
+            สถานที่ท่องเที่ยวหลากหลาย ทั้งทะเล
+            ภูเขา น้ำตก และสถานที่สำคัญทางประวัติศาสตร์
+        </p>
+
+        <p>
+            นักท่องเที่ยวสามารถเดินทางมาพักผ่อน
+            ชมธรรมชาติ และสัมผัสวิถีชีวิต
+            ของผู้คนในจังหวัดได้
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page3')"
+        >
+            ไปต่อ → อ่าวประจวบ
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 3 : อ่าวประจวบ
+================================================== -->
+
+<section id="page3" class="page">
+
+    <div class="box">
+
+        <h2>
+            🌊 อ่าวประจวบคีรีขันธ์
+        </h2>
+
+        <img
+            src="อ่าวประจวบ.jpg"
+            alt="อ่าวประจวบคีรีขันธ์"
+            class="main-image"
+        >
+
+        <p>
+            อ่าวประจวบคีรีขันธ์เป็นสถานที่ท่องเที่ยว
+            ที่มีทัศนียภาพสวยงาม สามารถชมวิวทะเล
+            และภูเขาที่อยู่โดยรอบได้
+        </p>
+
+        <p>
+            บริเวณอ่าวมีบรรยากาศเหมาะสำหรับ
+            การพักผ่อน เดินเล่น และถ่ายภาพ
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page4')"
+        >
+            ไปต่อ → เกาะทะลุ
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 4 : เกาะทะลุ
+================================================== -->
+
+<section id="page4" class="page">
+
+    <div class="box">
+
+        <h2>
+            🏝️ เกาะทะลุ
+        </h2>
+
+        <img
+            src="เกาะทะลุ.jpg"
+            alt="เกาะทะลุ"
+            class="main-image"
+        >
+
+        <p>
+            เกาะทะลุเป็นสถานที่ท่องเที่ยวทางทะเล
+            ที่มีธรรมชาติสวยงาม น้ำทะเลใส
+            และบรรยากาศเหมาะสำหรับการพักผ่อน
+        </p>
+
+        <p>
+            นักท่องเที่ยวสามารถชมวิวทะเล
+            และสัมผัสธรรมชาติที่สวยงามของเกาะ
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page5')"
+        >
+            ไปต่อ → อุทยานราชภักดิ์
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 5 : อุทยานราชภักดิ์
+================================================== -->
+
+<section id="page5" class="page">
+
+    <div class="box">
+
+        <h2>
+            👑 อุทยานราชภักดิ์
+        </h2>
+
+        <img
+            src="rajabhakti.png"
+            alt="อุทยานราชภักดิ์"
+            class="main-image"
+        >
+
+        <p>
+            อุทยานราชภักดิ์เป็นสถานที่สำคัญ
+            ของจังหวัดประจวบคีรีขันธ์
+            และเป็นสถานที่ที่มีความสำคัญ
+            ทางประวัติศาสตร์
+        </p>
+
+        <p>
+            ภายในมีพระบรมราชานุสาวรีย์
+            ของพระมหากษัตริย์ไทย
+            ที่มีความสำคัญในประวัติศาสตร์
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page6')"
+        >
+            ไปต่อ → ถ้ำพระยานคร
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 6 : ถ้ำพระยานคร
+================================================== -->
+
+<section id="page6" class="page">
+
+    <div class="box">
+
+        <h2>
+            🏞️ ถ้ำพระยานคร
+        </h2>
+
+        <img
+            src="phrayanakhon.jpg"
+            alt="ถ้ำพระยานคร"
+            class="main-image"
+        >
+
+        <p>
+            ถ้ำพระยานครเป็นสถานที่ท่องเที่ยว
+            ทางธรรมชาติที่มีชื่อเสียง
+            ของจังหวัดประจวบคีรีขันธ์
+        </p>
+
+        <p>
+            ภายในถ้ำมีพระที่นั่งคูหาคฤหาสน์
+            ซึ่งเป็นจุดเด่นที่สวยงาม
+            และมีความสำคัญทางประวัติศาสตร์
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page7')"
+        >
+            ไปต่อ → หาดเขากะโหลก
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 7 : หาดเขากะโหลก
+================================================== -->
+
+<section id="page7" class="page">
+
+    <div class="box">
+
+        <h2>
+            🏖️ หาดเขากะโหลก
+        </h2>
+
+        <img
+            src="khaokoalok.jpg"
+            alt="หาดเขากะโหลก"
+            class="main-image"
+        >
+
+        <p>
+            หาดเขากะโหลกเป็นชายหาดที่มี
+            บรรยากาศสวยงามและมีภูเขา
+            อยู่ใกล้กับชายทะเล
+        </p>
+
+        <p>
+            เหมาะสำหรับการพักผ่อน
+            เดินเล่น ชมวิวทะเล
+            และถ่ายภาพ
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page8')"
+        >
+            ไปต่อ → น้ำตกป่าละอู
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     หน้า 8 : น้ำตกป่าละอู
+================================================== -->
+
+<section id="page8" class="page">
+
+    <div class="box">
+
+        <h2>
+            💦 น้ำตกป่าละอู
+        </h2>
+
+        <img
+            src="pala-u.jpg"
+            alt="น้ำตกป่าละอู"
+            class="main-image"
+        >
+
+        <p>
+            น้ำตกป่าละอูเป็นแหล่งท่องเที่ยว
+            ทางธรรมชาติที่อยู่ท่ามกลาง
+            ผืนป่าที่อุดมสมบูรณ์
+        </p>
+
+        <p>
+            มีน้ำตกหลายชั้นและมีบรรยากาศ
+            ร่มรื่น เหมาะสำหรับผู้ที่ชื่นชอบ
+            ธรรมชาติและการพักผ่อน
+        </p>
+
+        <button
+            class="next-button"
+            onclick="showPage('page1')"
+        >
+            ↩ กลับหน้าปก
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     Footer
+================================================== -->
+
+<footer>
+
+    <p>
+        © 2026 เว็บไซต์แนะนำสถานที่ท่องเที่ยว
+        จังหวัดประจวบคีรีขันธ์
+    </p>
+
+    <p>
+        จัดทำเพื่อการศึกษา
+    </p>
+
+</footer>
+
+
+<!-- ==================================================
+     JavaScript
+================================================== -->
+
+<script>
+
+function showPage(pageName) {
+
+    /* ค้นหาทุกหน้า */
+    var pages = document.querySelectorAll(".page");
+
+    /* ซ่อนทุกหน้า */
+    pages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+    });
+
+    /* แสดงหน้าที่เลือก */
+    document.getElementById(pageName)
+        .classList.add("active");
+
+    /* เลื่อนกลับขึ้นด้านบน */
+    window.scrollTo(0, 0);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
